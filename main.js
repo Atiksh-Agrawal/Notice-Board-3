@@ -7,7 +7,7 @@ leftHandX = 0;
 
 function setup(){
     canvas = createCanvas(550,500);
-    canvas.position(600,200);
+    canvas.position(250,200);
     video = createCapture(VIDEO);
     video.size(400,400);
 
@@ -28,13 +28,11 @@ function modelLoaded(){
     console.log("posenet is initialized");
 }
 
-function getPoses(error,results){
+function getPoses(results){
     
     
-    if(error){
-        console.error(error);
-    }
-    else{
+    if(results.length > 0){
+    
         console.log(results);
         noseX = results[0].pose.nose.x;
         noseY = results[0].pose.nose.y;
